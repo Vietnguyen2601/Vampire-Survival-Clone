@@ -1,0 +1,13 @@
+# Unity generated
+Library/
+Temp/
+Obj/
+Logs
+UserSettings/
+
+# Never track these
+*.csproj
+*.unityproj
+*.sln
+.vs/
+.DS_Store
