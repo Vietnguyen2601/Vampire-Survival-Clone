@@ -11,10 +11,13 @@ public class PlayerMovement : MonoBehaviour
     public float lastVerticalVector;
     [HideInInspector]
     public Vector2 movement;
+    [HideInInspector]
+    public Vector2 lastMoveVector;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        lastMoveVector = new Vector2(1, 0f);
     }
 
     void Update()
@@ -33,13 +36,20 @@ public class PlayerMovement : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
         movement = new Vector2(moveX, moveY).normalized;
 
-        if( movement.x != 0 )
+        if (movement.x != 0)
         {
             lastHorizontalVector = movement.x;
-        } 
-        if ( movement.y != 0 )
+            lastMoveVector = new Vector2(lastHorizontalVector, 0f);
+        }
+        if (movement.y != 0)
         {
             lastVerticalVector = movement.y;
+            lastMoveVector = new Vector2(0f, lastVerticalVector);
+        }
+
+        if (movement.x != 0 && movement.y != 0)
+        {
+            lastMoveVector = new Vector2(lastHorizontalVector, lastVerticalVector);
         }
     }
 
