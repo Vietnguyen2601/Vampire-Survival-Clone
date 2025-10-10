@@ -2,8 +2,25 @@ using UnityEngine;
 
 public class ProjectileWeaponBehavior : MonoBehaviour
 {
+    public WeapontScriptableObject weaponData;
+
     protected Vector3 direction;
     public float detroyAfterSeconds;
+
+    //Current stats
+    protected float currentSpeed;
+    protected float currentDamage;
+    protected float currentCooldownDuration;
+    protected int currentPrirce;
+
+    private void Awake()
+    {
+        currentSpeed = weaponData.Speed;
+        currentDamage = weaponData.Damage;
+        currentCooldownDuration = weaponData.CooldownDuration;
+        currentPrirce = weaponData.Prirce;
+    }
+
 
     protected virtual void Start()
     {
@@ -57,5 +74,24 @@ public class ProjectileWeaponBehavior : MonoBehaviour
 
         transform.localScale = scale;
         transform.rotation = Quaternion.Euler(rotation);
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Enemy"))
+        {
+            EnemyStats enemy = col.GetComponent<EnemyStats>();
+            enemy.TakeDamage(currentDamage); // make sure to use currentDamage instead of weaponData.Damage
+            ReducePrirce();
+        }
+    }
+
+    void ReducePrirce()
+    {
+        currentPrirce--;
+        if (currentPrirce <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
