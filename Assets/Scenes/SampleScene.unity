@@ -134,6 +134,8 @@ GameObject:
   - component: {fileID: 114235031}
   - component: {fileID: 114235037}
   - component: {fileID: 114235036}
+  - component: {fileID: 114235038}
+  - component: {fileID: 114235039}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -153,11 +155,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c92dbeead0f5c94ab51e04c7db53e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 5
   lastHorizontalVector: 0
   lastVerticalVector: 0
   movement: {x: 0, y: 0}
   lastMoveVector: {x: 0, y: 0}
+  charactorData: {fileID: 11400000, guid: f12b81311619ea24ba30c1b7d862897e, type: 2}
 --- !u!61 &114235032
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -340,6 +342,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feb941e97005e944fb52188a498ffe02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewEmptyCSharpScript
+--- !u!114 &114235038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114235030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0b1661da07b5442824acea34fe3d01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
+  charactorData: {fileID: 11400000, guid: f12b81311619ea24ba30c1b7d862897e, type: 2}
+  experience: 0
+  level: 1
+  experienceCap: 100
+  invincibilityDuration: 0.5
+  levelRanges:
+  - startLevel: 1
+    endLevel: 3
+    experienceCapIncrease: 100
+  - startLevel: 4
+    endLevel: 5
+    experienceCapIncrease: 200
+--- !u!114 &114235039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114235030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef368fafff204ec408f0561c793b3ffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCollector
 --- !u!1 &361772450
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,7 +687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1173747588
 Transform:
   m_ObjectHideFlags: 0
@@ -695,7 +733,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1428567742
 Transform:
   m_ObjectHideFlags: 0
@@ -3781,6 +3819,10 @@ PrefabInstance:
     - target: {fileID: 3550082990700717169, guid: d2e2ce7aa70d90540a7833781a125690, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974089386303211870, guid: d2e2ce7aa70d90540a7833781a125690, type: 3}
+      propertyPath: drops.Array.data[0].dropRate
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

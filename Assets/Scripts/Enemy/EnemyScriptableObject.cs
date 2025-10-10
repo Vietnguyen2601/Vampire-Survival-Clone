@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "EnemyScriptableObject", menuName = "ScriptatbleObject/Enemy")]
+[CreateAssetMenu(fileName = "EnemyScriptableObject", menuName = "ScriptableObject/Enemy")]
 public class EnemyScriptableObject : ScriptableObject
 {
     [SerializeField]

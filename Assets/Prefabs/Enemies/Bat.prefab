@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3550082990700717169}
   - component: {fileID: -5868595007839011491}
   - component: {fileID: -867975829046945745}
+  - component: {fileID: 5974089386303211870}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Enemy
@@ -188,3 +189,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.84375, y: 0.6875}
   m_EdgeRadius: 0
+--- !u!114 &5974089386303211870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195326156812852568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf6723baa321f1d45a4384953e95aa24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DropRateManager
+  drops:
+  - name: Blue gem
+    itemPrefab: {fileID: 4992270588165340017, guid: 016f6815108a5a84c8fd0ee89d5bc679, type: 3}
+    dropRate: 50

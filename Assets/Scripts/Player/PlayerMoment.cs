@@ -3,8 +3,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //Movement 
-    public float moveSpeed;
-    Rigidbody2D rb;
     [HideInInspector]
     public float lastHorizontalVector;
     [HideInInspector]
@@ -13,6 +11,10 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 movement;
     [HideInInspector]
     public Vector2 lastMoveVector;
+
+    //reference
+    Rigidbody2D rb;
+    public CharactorScriptableObject charactorData;
 
     void Start()
     {
@@ -55,6 +57,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        rb.linearVelocity = new Vector2(movement.x * moveSpeed, movement.y * moveSpeed);
+        rb.linearVelocity = new Vector2(movement.x * charactorData.MoveSpeed, movement.y * charactorData.MoveSpeed);
     }
 }

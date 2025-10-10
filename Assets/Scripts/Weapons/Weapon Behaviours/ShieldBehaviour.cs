@@ -12,14 +12,22 @@ public class ShieldBehaviour : MeleeWeaponBehaviour
         markedEnemies = new List<GameObject>();
     }
 
-    protected override void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnTriggerEnter2D(Collider2D col)
     {
-        if (collision.CompareTag("Enemy") && !markedEnemies.Contains(collision.gameObject))
+        if (col.CompareTag("Enemy") && !markedEnemies.Contains(col.gameObject))
         {
-            EnemyStats enemy = collision.GetComponent<EnemyStats>();
+            EnemyStats enemy = col.GetComponent<EnemyStats>();
             enemy.TakeDamage(currentDamage);
 
-            markedEnemies.Add(collision.gameObject);
+            markedEnemies.Add(col.gameObject);
+        }
+        else if (col.CompareTag("Prop") && !markedEnemies.Contains(col.gameObject))
+        {
+            if (col.TryGetComponent<Breaker>(out Breaker breaker))
+            {
+                breaker.TakeDamage(currentDamage); // make sure to use currentDamage instead of weaponData.Damage
+                markedEnemies.Add(col.gameObject);
+            }
         }
     }
 }
