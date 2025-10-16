@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01dfdc9ae8ab08041ac0b34af4cbcb1b, type: 3}
-  m_Name: Knife Charactor
+  m_Name: Shield Charactor
   m_EditorClassIdentifier: Assembly-CSharp::CharactorScriptableObject
-  startingWeapon: {fileID: 261965574988413419, guid: cb68f044082b7da45bf1b64984fb3066, type: 3}
+  startingWeapon: {fileID: 9152403832543939920, guid: 0d07bb20d787f87498d9c4daa4920ea3, type: 3}
   maxHealth: 1000
   recovery: 1
   moveSpeed: 5

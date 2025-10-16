@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29fb352683fe14448b192e265e55bb40, type: 3}
-  m_Name: Bat Enemy
+  m_Name: Red Bat Enemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemyScriptableObject
-  moveSpeed: 2
+  moveSpeed: 3
   maxHealth: 10
   damage: 0
