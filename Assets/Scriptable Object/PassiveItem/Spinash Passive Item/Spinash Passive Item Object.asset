@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc2b0704deee81942b88d7558a6d3161, type: 3}
+  m_Name: Spinash Passive Item Object
+  m_EditorClassIdentifier: Assembly-CSharp::PassiveItemScriptableObject
+  multiplier: 100
+  level: 1
+  nextLevelPrefab: {fileID: 3589124956594625630, guid: 28de748f52de8174d846dea08b99e043, type: 3}
+  icon: {fileID: -6180373133180794851, guid: 4c74fd00933967b4fb7cdf329c90287e, type: 3}
